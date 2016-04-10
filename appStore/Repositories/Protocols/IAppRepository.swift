@@ -9,8 +9,7 @@
 import Foundation
 
 
-protocol ISecurityRepository {
+protocol IAppRepository {
     
-    func findApps(username: String , password: String ,completion:(success: AppItem!, fail: Error!)-> Void)-> Void
-    
+    func findApps(username: String , password: String ,completion:(success: [AppItem]!, fail: NSError!)-> Void)-> Void
 }
