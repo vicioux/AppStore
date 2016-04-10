@@ -15,6 +15,8 @@ class MobileApp: NSObject {
     var context: RepositoryLocator;
     var items: [AppItem]!
     var currentItem: AppItem!
+    var categories: [String]!
+    var currentCategory: [String]!
     
     required override init() {
         context = RepositoryLocator.sharedInstance
@@ -32,4 +34,13 @@ class MobileApp: NSObject {
         
         }
     }
+    
+    func selectCurrentItem(index:Int) -> Void {
+        if (self.items != nil && index < self.items.count ) {
+            self.currentItem = self.items[index];
+        }
+    }
+
+    
+    
 }
