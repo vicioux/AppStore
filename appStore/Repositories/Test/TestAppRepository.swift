@@ -11,6 +11,7 @@ import Foundation
 class TestAppRepository : IAppRepository{
 
     static let sharedInstance = AppRepository()
+    
     func findApps(username: String, password: String, completion: (success: [AppItem]!, fail: NSError!) -> Void) {
         
     }

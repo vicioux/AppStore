@@ -1,29 +1,13 @@
 PODS:
   - Alamofire (3.3.1)
-  - AlamofireJsonToObjects (1.6.0):
-    - Alamofire
-    - EVReflection
-  - EVReflection (2.24.0)
-  - SwiftyJSON (2.3.2)
+  - ObjectMapper (1.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
-  - AlamofireJsonToObjects (~> 1.0)
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
-
-EXTERNAL SOURCES:
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  SwiftyJSON:
-    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+  - ObjectMapper (~> 1.2)
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  AlamofireJsonToObjects: e5155c1c58493c44d7ebe56bbb1aa65d95e82c68
-  EVReflection: 1dbb41847798d88ab625007a6a311f28a5d71d86
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
 
 COCOAPODS: 0.39.0

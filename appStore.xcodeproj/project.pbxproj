@@ -18,7 +18,6 @@
 		555854E61CBA9AD8009B54DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854E51CBA9AD8009B54DB /* Constants.swift */; };
 		555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854EB1CBA9DEB009B54DB /* IAppRepository.swift */; };
 		555854EF1CBAA047009B54DB /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854EE1CBAA047009B54DB /* AppItem.swift */; };
-		555854F11CBAA1ED009B54DB /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F01CBAA1ED009B54DB /* BaseModel.swift */; };
 		555854F31CBAB0D7009B54DB /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F21CBAB0D7009B54DB /* AppRepository.swift */; };
 		555854F51CBAB1FB009B54DB /* TestAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F41CBAB1FB009B54DB /* TestAppRepository.swift */; };
 		555854F71CBAB2E7009B54DB /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F61CBAB2E7009B54DB /* RepositoryLocator.swift */; };
@@ -60,7 +59,6 @@
 		555854E51CBA9AD8009B54DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		555854EB1CBA9DEB009B54DB /* IAppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAppRepository.swift; path = Repositories/Protocols/IAppRepository.swift; sourceTree = "<group>"; };
 		555854EE1CBAA047009B54DB /* AppItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppItem.swift; path = Model/AppItem.swift; sourceTree = "<group>"; };
-		555854F01CBAA1ED009B54DB /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModel.swift; path = Model/BaseModel.swift; sourceTree = "<group>"; };
 		555854F21CBAB0D7009B54DB /* AppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRepository.swift; path = Repositories/Production/AppRepository.swift; sourceTree = "<group>"; };
 		555854F41CBAB1FB009B54DB /* TestAppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAppRepository.swift; path = Repositories/Test/TestAppRepository.swift; sourceTree = "<group>"; };
 		555854F61CBAB2E7009B54DB /* RepositoryLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryLocator.swift; path = Repositories/RepositoryLocator.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				555854EE1CBAA047009B54DB /* AppItem.swift */,
-				555854F01CBAA1ED009B54DB /* BaseModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -412,7 +409,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				555854F31CBAB0D7009B54DB /* AppRepository.swift in Sources */,
-				555854F11CBAA1ED009B54DB /* BaseModel.swift in Sources */,
 				555854E31CBA9783009B54DB /* ViewController.swift in Sources */,
 				555854F51CBAB1FB009B54DB /* TestAppRepository.swift in Sources */,
 				555854EF1CBAA047009B54DB /* AppItem.swift in Sources */,

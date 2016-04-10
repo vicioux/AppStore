@@ -7,20 +7,12 @@
 //
 
 import Foundation
-import EVReflection
-import AlamofireJsonToObjects
+import ObjectMapper
 
-public class BaseModel: EVObject {
-    
-    public required init() {
-        super.init()
+public class BaseModel:Mappable {
+
+    init?(_ map: Map) {
+        
     }
-    
-    required public init(json:String?) {
-        super.init();
-        let jsonDict = EVReflection.dictionaryFromJson(json)
-        EVReflection.setPropertiesfromDictionary(jsonDict, anyObject: self)
-    }
-    
     
 }

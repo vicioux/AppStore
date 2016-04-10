@@ -7,25 +7,34 @@
 //
 
 import Foundation
-import AlamofireJsonToObjects
-import EVReflection
+import ObjectMapper
 
-public class AppItem: BaseModel {
+class AppItem : Mappable {
     
-    var id : String!
-    var username : String!
-    var password : String!
-    var apiToken : String!
-    var fullName : String!
+    var name : String?
+    var category : String?
+    var summary : String?
+    var price : String?
+    var image : String?
+    var releaseDate : String?
+    var link : String?
     
-    var firstName : String!
-    var lastName : String!
-    var email : String!
-    var bio : String!
-    var status : String! = "active"
-    var loginAt: CUnsignedLongLong!
-    var createdAt: CUnsignedLongLong!
-    var isSuperAdmin: Bool!
-    var picture : String!
+    init(){}
+    
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+    
+    func mapping(map: Map) {
+        
+        name <- map["im:name.label"]
+        category <- map["category.attributes.label"]
+        summary <- map["summary.label"]
+        price <- map["im:price.attributes.amount"]
+        image <- map["im:image.0.label"]
+        releaseDate <- map["im:releaseDate.label"]
+        link <- map["link.attributes.href"]
+        
+    }
     
 }

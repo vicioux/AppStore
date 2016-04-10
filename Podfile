@@ -1,5 +1,4 @@
-platform :ios, '9.3'
+platform :ios, '9.0'
 use_frameworks!
 pod 'Alamofire', '~> 3.0'
-pod 'AlamofireJsonToObjects', '~> 1.0'
-pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'ObjectMapper', '~> 1.2'
