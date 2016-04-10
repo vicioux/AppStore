@@ -15,6 +15,8 @@
 		555854D01CBA8AA6009B54DB /* appStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854CF1CBA8AA6009B54DB /* appStoreUITests.swift */; };
 		555854E31CBA9783009B54DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854E21CBA9783009B54DB /* ViewController.swift */; };
 		555854E61CBA9AD8009B54DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854E51CBA9AD8009B54DB /* Constants.swift */; };
+		555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854EB1CBA9DEB009B54DB /* IAppRepository.swift */; };
+		555854EF1CBAA047009B54DB /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854EE1CBAA047009B54DB /* AppItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		555854D11CBA8AA6009B54DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		555854E21CBA9783009B54DB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		555854E51CBA9AD8009B54DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		555854EB1CBA9DEB009B54DB /* IAppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAppRepository.swift; path = Repositories/Protocols/IAppRepository.swift; sourceTree = "<group>"; };
+		555854EE1CBAA047009B54DB /* AppItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppItem.swift; path = Model/AppItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		555854AE1CBA8AA5009B54DB /* appStore */ = {
 			isa = PBXGroup;
 			children = (
+				555854ED1CBA9F72009B54DB /* Model */,
+				555854E71CBA9BFB009B54DB /* Repositories */,
 				555854E41CBA9800009B54DB /* Views */,
 				555854DD1CBA9740009B54DB /* Controllers */,
 				555854AF1CBA8AA5009B54DB /* AppDelegate.swift */,
@@ -142,6 +148,46 @@
 				555854B81CBA8AA5009B54DB /* LaunchScreen.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		555854E71CBA9BFB009B54DB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				555854EA1CBA9C21009B54DB /* Test */,
+				555854E91CBA9C19009B54DB /* Protocols */,
+				555854E81CBA9C0F009B54DB /* Production */,
+			);
+			name = Repositories;
+			sourceTree = "<group>";
+		};
+		555854E81CBA9C0F009B54DB /* Production */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Production;
+			sourceTree = "<group>";
+		};
+		555854E91CBA9C19009B54DB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				555854EB1CBA9DEB009B54DB /* IAppRepository.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		555854EA1CBA9C21009B54DB /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		555854ED1CBA9F72009B54DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				555854EE1CBAA047009B54DB /* AppItem.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				555854E31CBA9783009B54DB /* ViewController.swift in Sources */,
+				555854EF1CBAA047009B54DB /* AppItem.swift in Sources */,
+				555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */,
 				555854B01CBA8AA5009B54DB /* AppDelegate.swift in Sources */,
 				555854E61CBA9AD8009B54DB /* Constants.swift in Sources */,
 			);
