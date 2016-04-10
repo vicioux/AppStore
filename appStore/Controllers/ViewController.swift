@@ -12,7 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        MobileApp.sharedInstance.showItems { (success, fail) in
+            print(success.count)
+        }
     }
 
     override func didReceiveMemoryWarning() {

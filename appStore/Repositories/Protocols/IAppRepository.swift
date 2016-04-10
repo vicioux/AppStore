@@ -11,5 +11,5 @@ import Foundation
 
 protocol IAppRepository {
     
-    func findApps(username: String , password: String ,completion:(success: [AppItem]!, fail: NSError!)-> Void)-> Void
+    func findApps(completion:(success: [AppItem]!, fail: NSError!)-> Void)-> Void
 }

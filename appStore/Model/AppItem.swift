@@ -26,7 +26,6 @@ class AppItem : Mappable {
     }
     
     func mapping(map: Map) {
-        
         name <- map["im:name.label"]
         category <- map["category.attributes.label"]
         summary <- map["summary.label"]
@@ -34,7 +33,6 @@ class AppItem : Mappable {
         image <- map["im:image.0.label"]
         releaseDate <- map["im:releaseDate.label"]
         link <- map["link.attributes.href"]
-        
     }
     
 }
