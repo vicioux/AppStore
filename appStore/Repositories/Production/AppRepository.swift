@@ -14,20 +14,24 @@ class AppRepository : IAppRepository {
 
     static let sharedInstance = AppRepository()
     
-    func findApps(completion: (success: [AppItem]!, fail: NSError!) -> Void) {
-        
+    func findApps(category: String!, completion: (success: [AppItem]!, fail: NSError!) -> Void) {
         Alamofire.request(.GET,APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), encoding: .JSON).validate().responseJSON { (response: Response<AnyObject, NSError>) -> Void in
             switch response.result {
                 
             case let .Success(valueJSON):
                 let items = Mapper<AppItem>().mapArray(valueJSON["feed"]!?["entry"])
-                completion(success: items, fail: nil)
                 
+                if category != nil {
+                    let filteredItems = items!.filter() { $0.category == category}
+                    completion(success: filteredItems, fail: nil)
+                } else {
+                    completion(success: items, fail: nil)
+                }
+        
             case .Failure(let alamoFireError):
                 completion(success: nil, fail: alamoFireError)
             }
-            
         }
-        
     }
+    
 }

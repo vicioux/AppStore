@@ -12,7 +12,7 @@ class RepositoryLocator {
     static let sharedInstance = RepositoryLocator()
     
     func securityRepository() -> IAppRepository{
-        
+
         if (Constants.useTestRepo) {
             return TestAppRepository.sharedInstance
         } else {

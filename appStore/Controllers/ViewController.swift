@@ -13,9 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MobileApp.sharedInstance.showItems { (success, fail) in
-            print(success.count)
+        MobileApp.sharedInstance.showItems("Education"){ (fail) in
+            let items = MobileApp.sharedInstance.items
+            for item in items {
+                print("app Name \(item.name) app Category \(item.category)")
+            }
         }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,12 +8,12 @@
 
 import Foundation
 
-class TestAppRepository : IAppRepository{
+class TestAppRepository : IAppRepository {
 
     static let sharedInstance = AppRepository()
     
-    func findApps(completion: (success: [AppItem]!, fail: NSError!) -> Void) {
-        
+    func findApps(category: String!, completion: (success: [AppItem]!, fail: NSError!) -> Void) {
+        //Create Dummy Code
     }
-
+    
 }
