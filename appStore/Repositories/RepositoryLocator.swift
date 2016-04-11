@@ -11,7 +11,7 @@ import Foundation
 class RepositoryLocator {
     static let sharedInstance = RepositoryLocator()
     
-    func securityRepository() -> IAppRepository{
+    func appRepository() -> IAppRepository{
 
         if (Constants.useTestRepo) {
             return TestAppRepository.sharedInstance

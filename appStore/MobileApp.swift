@@ -15,16 +15,28 @@ class MobileApp: NSObject {
     var context: RepositoryLocator;
     var items: [AppItem]!
     var currentItem: AppItem!
+    var categories:[String]!
     
     required override init() {
         context = RepositoryLocator.sharedInstance
     }
     
     func showItems(category:String!, completion:(fail: NSError!) -> Void) {
-        context.securityRepository().findApps(category) { [weak self] (success, error) in
+        context.appRepository().findApps(category) { [weak self] (success, error) in
             
             if (success != nil && success.count > 0) {
                 self!.items = success
+            }
+            
+            completion(fail: error)
+        }
+    }
+    
+    func showCategories(completion:(fail: NSError!) -> Void) {
+        context.appRepository().findCategories { [weak self] (success, error) in
+            
+            if (success != nil && success.count > 0) {
+                self!.categories = success
             }
             
             completion(fail: error)
