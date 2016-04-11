@@ -16,4 +16,8 @@ class TestAppRepository : IAppRepository {
         //Create Dummy Code
     }
     
+    func findCategories(completion: (success: [String]!, fail: NSError!) -> Void) {
+        //Create Dummy Code
+    }
+    
 }

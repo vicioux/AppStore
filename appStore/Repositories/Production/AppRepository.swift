@@ -34,4 +34,9 @@ class AppRepository : IAppRepository {
         }
     }
     
+    func findCategories(completion: (success: [String]!, fail: NSError!) -> Void) {
+        let categories = ["Games", "Photo & Video", "Social Networking", "Education", "Music", "Navigation", "Travel"]
+        completion(success: categories, fail: nil)
+    }
+    
 }

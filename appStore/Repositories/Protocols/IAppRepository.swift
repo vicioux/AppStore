@@ -12,4 +12,6 @@ import Foundation
 protocol IAppRepository {
     
     func findApps(category: String!,completion:(success: [AppItem]!, fail: NSError!)-> Void)-> Void
+    
+    func findCategories(completion:(success: [String]!, fail: NSError!)-> Void)-> Void
 }
