@@ -12,33 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*do {
-            try tError()
-        } catch {
-            print("error inside a throws")
-            return
-        }*/
-        
-        /*MobileApp.sharedInstance.showItems(nil){ (fail) in
-            let items = MobileApp.sharedInstance.items
-            for item in items {
-                print("\(item.name)")
-            }
-        }*/
-        
-        /*MobileApp.sharedInstance.showCategories({ (fail) in
-            let items = MobileApp.sharedInstance.categories
-            for item in items {
-                print("\(item)")
-            }
-        })*/
     }
     
-    /*func tError() throws {
-        throw APIError.URLErrorDomain()
-    }*/
-    
+    override func viewDidAppear(animated: Bool) {
+        AppNotification.show(nil, title: "Hello", subtitle: "World", type: "test")
+    }    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
