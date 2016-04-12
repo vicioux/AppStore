@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        AppNotification.show(nil, title: "Hello", subtitle: "World", type: "test")
+        //AppNotification.show(nil, subtitle: "i guess something it´s happening")
     }    
 
     override func didReceiveMemoryWarning() {
