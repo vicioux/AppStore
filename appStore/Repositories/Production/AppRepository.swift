@@ -14,8 +14,9 @@ class AppRepository : IAppRepository {
 
     static let sharedInstance = AppRepository()
     
-    func findApps(category: String!, completion: (success: [AppItem]!, fail: NSError!) -> Void) {
-        Alamofire.request(.GET,APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), encoding: .JSON).validate().responseJSON { (response: Response<AnyObject, NSError>) -> Void in
+    func findApps(category: String!, completion: (success: [AppItem]!, fail: APIError!) -> Void) {
+        
+        Alamofire.request(.GET, APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), encoding: .JSON).validate().responseJSON { (response: Response<AnyObject, NSError>) -> Void in
             switch response.result {
                 
             case let .Success(valueJSON):
@@ -29,9 +30,11 @@ class AppRepository : IAppRepository {
                 }
         
             case .Failure(let alamoFireError):
-                completion(success: nil, fail: alamoFireError)
+                let error = Error.ErrorFromAlamofire(alamoFireError)
+                completion(success: nil, fail: error)
             }
         }
+        
     }
     
     func findCategories(completion: (success: [String]!, fail: NSError!) -> Void) {

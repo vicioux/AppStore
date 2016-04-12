@@ -12,7 +12,7 @@ class TestAppRepository : IAppRepository {
 
     static let sharedInstance = AppRepository()
     
-    func findApps(category: String!, completion: (success: [AppItem]!, fail: NSError!) -> Void) {
+    func findApps(category: String!, completion: (success: [AppItem]!, fail: APIError!) -> Void) {
         //Create Dummy Code
     }
     

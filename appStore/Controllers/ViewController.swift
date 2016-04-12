@@ -13,14 +13,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MobileApp.sharedInstance.showItems(nil){ (fail) in
+        /*do {
+            try tError()
+        } catch {
+            print("error inside a throws")
+            return
+        }*/
+        
+        /*MobileApp.sharedInstance.showItems(nil){ (fail) in
             let items = MobileApp.sharedInstance.items
             for item in items {
-                print("\(item.category)")
+                print("\(item.name)")
             }
-        }
+        }*/
         
+        /*MobileApp.sharedInstance.showCategories({ (fail) in
+            let items = MobileApp.sharedInstance.categories
+            for item in items {
+                print("\(item)")
+            }
+        })*/
     }
+    
+    /*func tError() throws {
+        throw APIError.URLErrorDomain()
+    }*/
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

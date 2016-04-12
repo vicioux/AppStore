@@ -21,7 +21,7 @@ class MobileApp: NSObject {
         context = RepositoryLocator.sharedInstance
     }
     
-    func showItems(category:String!, completion:(fail: NSError!) -> Void) {
+    func showItems(category:String!, completion:(fail: APIError!) -> Void) {
         context.appRepository().findApps(category) { [weak self] (success, error) in
             
             if (success != nil && success.count > 0) {
