@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MobileApp.sharedInstance.showItems(nil) { (fail) in
+            AppNotification.show(nil, subtitle: "i guess something it´s happening")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -22,6 +26,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }

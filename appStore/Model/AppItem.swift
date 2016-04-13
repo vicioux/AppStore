@@ -35,4 +35,10 @@ class AppItem : Mappable {
         link <- map["link.attributes.href"]
     }
     
+    func getItemImage() -> UIImage{
+        let url = NSURL(string:(self.image)!)
+        let data = NSData(contentsOfURL: url!)
+        return  UIImage(data: data!)!
+    }
+    
 }

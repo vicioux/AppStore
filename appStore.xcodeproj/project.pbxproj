@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2FA479659D74D4050E448F54 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D873FB3A473393947D41D62F /* Pods.framework */; };
+		552700191CBDEDE3006CC45C /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552700181CBDEDE3006CC45C /* ItemsCollectionViewController.swift */; };
+		5527001F1CBE09DD006CC45C /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */; };
 		553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B21CBCAEDE00450CD8 /* Error.swift */; };
 		553D83B61CBD2B6100450CD8 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B51CBD2B6100450CD8 /* AppNotification.swift */; };
 		553D83B81CBD2F4000450CD8 /* MobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B71CBD2F4000450CD8 /* MobileApp.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		033373A0E2F1606B3BFA90B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5485FC4B01EA5D26C33B364B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		552700181CBDEDE3006CC45C /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsCollectionViewController.swift; path = Controllers/ItemsCollectionViewController.swift; sourceTree = "<group>"; };
+		5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsCollectionViewCell.swift; path = Controllers/Cells/ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		553D83B21CBCAEDE00450CD8 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Model/Error.swift; sourceTree = "<group>"; };
 		553D83B51CBD2B6100450CD8 /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotification.swift; path = Utils/AppNotification.swift; sourceTree = "<group>"; };
 		553D83B71CBD2F4000450CD8 /* MobileApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileApp.swift; path = Model/MobileApp.swift; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5527001B1CBE096C006CC45C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		553D83B41CBD2B3200450CD8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +178,9 @@
 		555854DD1CBA9740009B54DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5527001B1CBE096C006CC45C /* Cells */,
 				555854E21CBA9783009B54DB /* ViewController.swift */,
+				552700181CBDEDE3006CC45C /* ItemsCollectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -433,9 +447,11 @@
 				555854F51CBAB1FB009B54DB /* TestAppRepository.swift in Sources */,
 				553D83B81CBD2F4000450CD8 /* MobileApp.swift in Sources */,
 				553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */,
+				5527001F1CBE09DD006CC45C /* ItemsCollectionViewCell.swift in Sources */,
 				555854EF1CBAA047009B54DB /* AppItem.swift in Sources */,
 				555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */,
 				555854B01CBA8AA5009B54DB /* AppDelegate.swift in Sources */,
+				552700191CBDEDE3006CC45C /* ItemsCollectionViewController.swift in Sources */,
 				553D83BA1CBD2F5B00450CD8 /* APIClient.swift in Sources */,
 				553D83B61CBD2B6100450CD8 /* AppNotification.swift in Sources */,
 				555854E61CBA9AD8009B54DB /* Constants.swift in Sources */,
