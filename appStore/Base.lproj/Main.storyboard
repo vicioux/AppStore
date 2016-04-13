@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Items Collection View Controller-->
+        <!--View AppList Controller-->
         <scene sceneID="ucq-CU-aKV">
             <objects>
-                <collectionViewController id="6vQ-6t-Jfe" customClass="ItemsCollectionViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="6vQ-6t-Jfe" userLabel="View AppList Controller" customClass="ItemsCollectionViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="l6c-wM-sxt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,10 +81,42 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="WBz-oX-enh"/>
+                    <connections>
+                        <segue destination="NQa-ak-bXc" kind="show" identifier="ShowDetail" action="showDetailViewController:sender:" id="rRB-iJ-pRH"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31Z-ui-e8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1074" y="306"/>
+        </scene>
+        <!--View AppDetail Controller-->
+        <scene sceneID="qOl-U3-LTx">
+            <objects>
+                <viewController id="NQa-ak-bXc" userLabel="View AppDetail Controller" customClass="DetailViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YPx-tI-ywk"/>
+                        <viewControllerLayoutGuide type="bottom" id="pud-P1-EY3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x37-1D-7gb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjp-hW-oLx">
+                                <rect key="frame" x="131" y="223" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemNameLabel" destination="wjp-hW-oLx" id="3rw-pc-SRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPy-r6-0bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1859" y="306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="soQ-1N-u1Y">

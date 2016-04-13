@@ -36,6 +36,7 @@ class ItemsCollectionViewController: UICollectionViewController {
     private struct StoryBoard
     {
         static let CellIdentifier = "ItemCell"
+        static let ShowDetail = "ShowDetail"
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,4 +56,10 @@ class ItemsCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        MobileApp.sharedInstance.selectCurrentItem(indexPath.row)
+        self.performSegueWithIdentifier(StoryBoard.ShowDetail, sender: nil)
+    }
+    
 }
