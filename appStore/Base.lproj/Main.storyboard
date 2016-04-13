@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r3Z-XW-cpg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9HG-tJ-pGC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View AppList Controller-->
+        <!--View Menu Controller-->
+        <scene sceneID="KW9-y1-CSC">
+            <objects>
+                <viewController id="9HG-tJ-pGC" userLabel="View Menu Controller" customClass="CategoryViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uRP-wc-gjn"/>
+                        <viewControllerLayoutGuide type="bottom" id="rXG-Xh-vS8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gx0-GL-a9O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wz9-UB-6Ri">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9HG-tJ-pGC" id="1uV-r0-Hxf"/>
+                                    <outlet property="delegate" destination="9HG-tJ-pGC" id="zWj-xy-rKv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="categoryTableView" destination="wz9-UB-6Ri" id="EP4-fJ-UXe"/>
+                        <segue destination="6vQ-6t-Jfe" kind="show" identifier="ShowByCategory" id="0zq-Qu-qMm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbc-7j-GVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="300"/>
+        </scene>
+        <!--AppList View  Controller-->
         <scene sceneID="ucq-CU-aKV">
             <objects>
-                <collectionViewController id="6vQ-6t-Jfe" userLabel="View AppList Controller" customClass="ItemsCollectionViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="6vQ-6t-Jfe" userLabel="AppList View  Controller" customClass="ItemsCollectionViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="l6c-wM-sxt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1074" y="306"/>
         </scene>
-        <!--View AppDetail Controller-->
+        <!--AppDetail View  Controller-->
         <scene sceneID="qOl-U3-LTx">
             <objects>
-                <viewController id="NQa-ak-bXc" userLabel="View AppDetail Controller" customClass="DetailViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NQa-ak-bXc" userLabel="AppDetail View  Controller" customClass="DetailViewController" customModule="appStore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YPx-tI-ywk"/>
                         <viewControllerLayoutGuide type="bottom" id="pud-P1-EY3"/>
@@ -129,12 +161,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6vQ-6t-Jfe" kind="relationship" relationship="rootViewController" id="yXy-Pe-HVt"/>
+                        <segue destination="9HG-tJ-pGC" kind="show" id="MNb-cX-7Qt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d2-lN-RiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="306"/>
+            <point key="canvasLocation" x="-95" y="-453"/>
         </scene>
     </scenes>
 </document>

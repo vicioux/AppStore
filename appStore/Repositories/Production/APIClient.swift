@@ -38,10 +38,11 @@ class APIClient: Manager {
 extension Request {
     public func responseResultObject(queue: dispatch_queue_t? = nil,
                                    options: NSJSONReadingOptions = .AllowFragments,
-                         completionHandler: (NSURLRequest, Response<AnyObject, NSError>) -> Void) -> Self { return response(queue: queue,
-                                                    responseSerializer: Request.JSONResponseSerializer(options: options),
-                                                     completionHandler: { (response) -> Void in
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                         completionHandler: (NSURLRequest, Response<AnyObject, NSError>) -> Void) -> Self {
+                                                    return response(queue: queue,
+                                                       responseSerializer: Request.JSONResponseSerializer(options: options),
+                                                        completionHandler: { (response) -> Void in
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
                 
                 
                 dispatch_async(queue ?? dispatch_get_main_queue(), {

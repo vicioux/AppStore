@@ -11,6 +11,9 @@
 		552700191CBDEDE3006CC45C /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552700181CBDEDE3006CC45C /* ItemsCollectionViewController.swift */; };
 		5527001F1CBE09DD006CC45C /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */; };
 		552700211CBE8AF1006CC45C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552700201CBE8AF1006CC45C /* DetailViewController.swift */; };
+		552B26701CBEDE79004F3749 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B266F1CBEDE79004F3749 /* CategoryTableViewCell.swift */; };
+		552B26771CBEE20B004F3749 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552B26761CBEE20B004F3749 /* CategoryTableViewCell.xib */; };
+		552B26791CBEE4E1004F3749 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B26781CBEE4E1004F3749 /* CategoryViewController.swift */; };
 		553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B21CBCAEDE00450CD8 /* Error.swift */; };
 		553D83B61CBD2B6100450CD8 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B51CBD2B6100450CD8 /* AppNotification.swift */; };
 		553D83B81CBD2F4000450CD8 /* MobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B71CBD2F4000450CD8 /* MobileApp.swift */; };
@@ -21,7 +24,6 @@
 		555854BA1CBA8AA5009B54DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555854B81CBA8AA5009B54DB /* LaunchScreen.storyboard */; };
 		555854C51CBA8AA6009B54DB /* appStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854C41CBA8AA6009B54DB /* appStoreTests.swift */; };
 		555854D01CBA8AA6009B54DB /* appStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854CF1CBA8AA6009B54DB /* appStoreUITests.swift */; };
-		555854E31CBA9783009B54DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854E21CBA9783009B54DB /* ViewController.swift */; };
 		555854E61CBA9AD8009B54DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854E51CBA9AD8009B54DB /* Constants.swift */; };
 		555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854EB1CBA9DEB009B54DB /* IAppRepository.swift */; };
 		555854EF1CBAA047009B54DB /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854EE1CBAA047009B54DB /* AppItem.swift */; };
@@ -53,6 +55,9 @@
 		552700181CBDEDE3006CC45C /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsCollectionViewController.swift; path = Controllers/ItemsCollectionViewController.swift; sourceTree = "<group>"; };
 		5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsCollectionViewCell.swift; path = Controllers/Cells/ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		552700201CBE8AF1006CC45C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Controllers/DetailViewController.swift; sourceTree = "<group>"; };
+		552B266F1CBEDE79004F3749 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = Controllers/Cells/CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		552B26761CBEE20B004F3749 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTableViewCell.xib; path = Base.lproj/Cells/CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		552B26781CBEE4E1004F3749 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = Controllers/CategoryViewController.swift; sourceTree = "<group>"; };
 		553D83B21CBCAEDE00450CD8 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Model/Error.swift; sourceTree = "<group>"; };
 		553D83B51CBD2B6100450CD8 /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotification.swift; path = Utils/AppNotification.swift; sourceTree = "<group>"; };
 		553D83B71CBD2F4000450CD8 /* MobileApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileApp.swift; path = Model/MobileApp.swift; sourceTree = "<group>"; };
@@ -69,7 +74,6 @@
 		555854CB1CBA8AA6009B54DB /* appStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		555854CF1CBA8AA6009B54DB /* appStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appStoreUITests.swift; sourceTree = "<group>"; };
 		555854D11CBA8AA6009B54DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		555854E21CBA9783009B54DB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		555854E51CBA9AD8009B54DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		555854EB1CBA9DEB009B54DB /* IAppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAppRepository.swift; path = Repositories/Protocols/IAppRepository.swift; sourceTree = "<group>"; };
 		555854EE1CBAA047009B54DB /* AppItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppItem.swift; path = Model/AppItem.swift; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 			isa = PBXGroup;
 			children = (
 				5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */,
+				552B266F1CBEDE79004F3749 /* CategoryTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		552B26711CBEDECA004F3749 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				552B26761CBEE20B004F3749 /* CategoryTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -181,9 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				5527001B1CBE096C006CC45C /* Cells */,
-				555854E21CBA9783009B54DB /* ViewController.swift */,
 				552700181CBDEDE3006CC45C /* ItemsCollectionViewController.swift */,
 				552700201CBE8AF1006CC45C /* DetailViewController.swift */,
+				552B26781CBEE4E1004F3749 /* CategoryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +204,7 @@
 		555854E41CBA9800009B54DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				552B26711CBEDECA004F3749 /* Cells */,
 				555854B31CBA8AA5009B54DB /* Main.storyboard */,
 				555854B81CBA8AA5009B54DB /* LaunchScreen.storyboard */,
 			);
@@ -373,6 +387,7 @@
 				555854BA1CBA8AA5009B54DB /* LaunchScreen.storyboard in Resources */,
 				555854B71CBA8AA5009B54DB /* Assets.xcassets in Resources */,
 				555854B51CBA8AA5009B54DB /* Main.storyboard in Resources */,
+				552B26771CBEE20B004F3749 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +461,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				555854F31CBAB0D7009B54DB /* AppRepository.swift in Sources */,
-				555854E31CBA9783009B54DB /* ViewController.swift in Sources */,
 				555854F51CBAB1FB009B54DB /* TestAppRepository.swift in Sources */,
 				553D83B81CBD2F4000450CD8 /* MobileApp.swift in Sources */,
 				553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */,
+				552B26791CBEE4E1004F3749 /* CategoryViewController.swift in Sources */,
 				5527001F1CBE09DD006CC45C /* ItemsCollectionViewCell.swift in Sources */,
 				555854EF1CBAA047009B54DB /* AppItem.swift in Sources */,
+				552B26701CBEDE79004F3749 /* CategoryTableViewCell.swift in Sources */,
 				555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */,
 				555854B01CBA8AA5009B54DB /* AppDelegate.swift in Sources */,
 				552700191CBDEDE3006CC45C /* ItemsCollectionViewController.swift in Sources */,
