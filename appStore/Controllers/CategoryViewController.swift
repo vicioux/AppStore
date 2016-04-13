@@ -12,21 +12,25 @@ class CategoryViewController: UIViewController {
     
     
     @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     private struct Identifier
     {
         static let categoryTableCell = "CategoryTableViewCell"
-        static let segue =  "ShowByCategory"
+        static let categoryCollectionViewCell = "CategoryCollectionViewCell"
+        static let categorySegue =  "ShowByCategory"
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Category"
         
-        let nib = UINib(nibName: Identifier.categoryTableCell, bundle: nil)
-        self.categoryTableView.registerNib(nib, forCellReuseIdentifier: Identifier.categoryTableCell)
+        let categoryTableNib = UINib(nibName: Identifier.categoryTableCell, bundle: nil)
+        self.categoryTableView.registerNib(categoryTableNib, forCellReuseIdentifier: Identifier.categoryTableCell)
+        
+        let categoryCollectionNib = UINib(nibName: Identifier.categoryCollectionViewCell, bundle: nil)
+        self.categoryCollectionView.registerNib(categoryCollectionNib, forCellWithReuseIdentifier: Identifier.categoryCollectionViewCell)
         
         MobileApp.sharedInstance.showCategories { (fail) in
             if (fail != nil){
@@ -42,7 +46,6 @@ class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MobileApp.sharedInstance.categories.count
     }
@@ -55,7 +58,30 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(Identifier.segue, sender: nil)
+        self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
     }
     
 }
+
+extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return MobileApp.sharedInstance.categories.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell: CategoryCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(Identifier.categoryCollectionViewCell, forIndexPath: indexPath) as! CategoryCollectionViewCell
+        
+        cell.categoryName = MobileApp.sharedInstance.categories[indexPath.row]
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(Identifier.categorySegue, sender: indexPath)
+    }
+}
+
+
+
+

@@ -14,6 +14,12 @@ class ItemsCollectionViewController: UICollectionViewController {
     private let numberOfItemsPerRow: CGFloat = 3.0
     private let heigthAjustment: CGFloat = 30.0
     
+    private struct Identifier
+    {
+        static let CellIdentifier = "ItemCell"
+        static let ShowDetail = "ShowDetail"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let width = (CGRectGetWidth(collectionView!.frame) - leftAndRigthPadding) / numberOfItemsPerRow
@@ -32,13 +38,7 @@ class ItemsCollectionViewController: UICollectionViewController {
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    private struct StoryBoard
-    {
-        static let CellIdentifier = "ItemCell"
-        static let ShowDetail = "ShowDetail"
-    }
-    
+
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if MobileApp.sharedInstance.items != nil {
@@ -50,7 +50,7 @@ class ItemsCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(StoryBoard.CellIdentifier, forIndexPath: indexPath) as! ItemsCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Identifier.CellIdentifier, forIndexPath: indexPath) as! ItemsCollectionViewCell
         
         cell.item = MobileApp.sharedInstance.items[indexPath.row]
         
@@ -59,7 +59,7 @@ class ItemsCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         MobileApp.sharedInstance.selectCurrentItem(indexPath.row)
-        self.performSegueWithIdentifier(StoryBoard.ShowDetail, sender: nil)
+        self.performSegueWithIdentifier(Identifier.ShowDetail, sender: nil)
     }
     
 }

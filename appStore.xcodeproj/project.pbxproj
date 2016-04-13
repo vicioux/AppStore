@@ -14,6 +14,8 @@
 		552B26701CBEDE79004F3749 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B266F1CBEDE79004F3749 /* CategoryTableViewCell.swift */; };
 		552B26771CBEE20B004F3749 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552B26761CBEE20B004F3749 /* CategoryTableViewCell.xib */; };
 		552B26791CBEE4E1004F3749 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B26781CBEE4E1004F3749 /* CategoryViewController.swift */; };
+		552B267B1CBEF370004F3749 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B267A1CBEF370004F3749 /* CategoryCollectionViewCell.swift */; };
+		552B267D1CBEF4AD004F3749 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552B267C1CBEF4AD004F3749 /* CategoryCollectionViewCell.xib */; };
 		553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B21CBCAEDE00450CD8 /* Error.swift */; };
 		553D83B61CBD2B6100450CD8 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B51CBD2B6100450CD8 /* AppNotification.swift */; };
 		553D83B81CBD2F4000450CD8 /* MobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D83B71CBD2F4000450CD8 /* MobileApp.swift */; };
@@ -58,6 +60,8 @@
 		552B266F1CBEDE79004F3749 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = Controllers/Cells/CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		552B26761CBEE20B004F3749 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTableViewCell.xib; path = Base.lproj/Cells/CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		552B26781CBEE4E1004F3749 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = Controllers/CategoryViewController.swift; sourceTree = "<group>"; };
+		552B267A1CBEF370004F3749 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		552B267C1CBEF4AD004F3749 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = Base.lproj/Cells/CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		553D83B21CBCAEDE00450CD8 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Model/Error.swift; sourceTree = "<group>"; };
 		553D83B51CBD2B6100450CD8 /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotification.swift; path = Utils/AppNotification.swift; sourceTree = "<group>"; };
 		553D83B71CBD2F4000450CD8 /* MobileApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileApp.swift; path = Model/MobileApp.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			children = (
 				5527001E1CBE09DD006CC45C /* ItemsCollectionViewCell.swift */,
 				552B266F1CBEDE79004F3749 /* CategoryTableViewCell.swift */,
+				552B267A1CBEF370004F3749 /* CategoryCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				552B26761CBEE20B004F3749 /* CategoryTableViewCell.xib */,
+				552B267C1CBEF4AD004F3749 /* CategoryCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555854BA1CBA8AA5009B54DB /* LaunchScreen.storyboard in Resources */,
+				552B267D1CBEF4AD004F3749 /* CategoryCollectionViewCell.xib in Resources */,
 				555854B71CBA8AA5009B54DB /* Assets.xcassets in Resources */,
 				555854B51CBA8AA5009B54DB /* Main.storyboard in Resources */,
 				552B26771CBEE20B004F3749 /* CategoryTableViewCell.xib in Resources */,
@@ -463,6 +470,7 @@
 				555854F31CBAB0D7009B54DB /* AppRepository.swift in Sources */,
 				555854F51CBAB1FB009B54DB /* TestAppRepository.swift in Sources */,
 				553D83B81CBD2F4000450CD8 /* MobileApp.swift in Sources */,
+				552B267B1CBEF370004F3749 /* CategoryCollectionViewCell.swift in Sources */,
 				553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */,
 				552B26791CBEE4E1004F3749 /* CategoryViewController.swift in Sources */,
 				5527001F1CBE09DD006CC45C /* ItemsCollectionViewCell.swift in Sources */,
