@@ -20,4 +20,8 @@ class TestAppRepository : IAppRepository {
         //Create Dummy Code
     }
     
+    func syncItems(completion: (success: [AppItem]!, fail: APIError!) -> Void) {
+        //Create Dummy Code
+    }
+    
 }

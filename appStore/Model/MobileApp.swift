@@ -56,5 +56,11 @@ class MobileApp: NSObject {
         }
     }
     
+    func sycn(completion:(fail: APIError!) -> Void) {
+        context.appRepository().syncItems { (success, fail) in
+            completion(fail: fail)
+        }
+    }
+    
     
 }

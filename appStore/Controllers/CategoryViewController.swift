@@ -23,12 +23,11 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        MobileApp.sharedInstance.showCategories { (fail) in
-            if (fail != nil){
-                AppNotification.show(nil, subtitle: "i guess something it´s happening")
-            } else {
-                self.categoryTableView.reloadData()
+    
+        self.categoryTableView.reloadData()
+        MobileApp.sharedInstance.sycn { (fail) in
+            if fail != nil {
+                AppNotification.show(fail, subtitle: "Oops something went wrong")
             }
         }
         

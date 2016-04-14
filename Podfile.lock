@@ -4,15 +4,23 @@ PODS:
     - BRYXBanner/Core (= 0.5.2)
   - BRYXBanner/Core (0.5.2)
   - ObjectMapper (1.2.0)
+  - Realm (0.98.7):
+    - Realm/Headers (= 0.98.7)
+  - Realm/Headers (0.98.7)
+  - RealmSwift (0.98.7):
+    - Realm (= 0.98.7)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - BRYXBanner
   - ObjectMapper (~> 1.2)
+  - RealmSwift
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  Realm: 46df2178359b6b57812e6cf957956febaba513a5
+  RealmSwift: 3056e6d7ad30ed50dd866185a615fccea73db5f5
 
 COCOAPODS: 0.39.0

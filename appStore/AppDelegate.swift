@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        MobileApp.sharedInstance.showCategories { (fail) in
+            if (fail != nil){
+                AppNotification.show(nil, subtitle: "i guess something it´s happening")
+            }
+        }
+        
         return true
     }
 

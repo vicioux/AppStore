@@ -9,56 +9,42 @@
 import Foundation
 import Alamofire
 import ObjectMapper
+import RealmSwift
 
 class AppRepository : IAppRepository {
     
     static let sharedInstance = AppRepository()
     
     func findApps(category: String!, completion: (success: [AppItem]!, fail: APIError!) -> Void) {
+    
+        let realm = try! Realm()
+        var realmItems = realm.objects(AppItem)
         
-        APIClient.sharedInstance.request(.GET, APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), parameters: nil,
-            encoding: .JSON).responseResultObject {
-                (request, response) -> Void in
-                switch response.result {
-                    
-                case let .Success(valueJSON):
-                    let items = Mapper<AppItem>().mapArray(valueJSON["feed"]!?["entry"])
-                    
-                    if category != nil {
-                        let filteredItems = items!.filter() { $0.category == category}
-                        completion(success: filteredItems, fail: nil)
-                    } else {
-                        completion(success: items, fail: nil)
-                    }
-                    
-                case .Failure(let alamoFireError):
-                    let error = Error.ErrorFromAlamofire(alamoFireError)
-                    completion(success: nil, fail: error)
-                }
+        
+        if category != nil{
+            let predicate = NSPredicate(format: "category = %@", category)
+            realmItems = realm.objects(AppItem).filter(predicate)
+        }
+        
+        //we check if we dont have internet and items too
+        if (realmItems.count < 1 && !APIClient.isConnectedToNetwork()){
+            completion(success: nil, fail: APIError.NoInternet)
+        }
+        
+        if (realmItems.count > 0) {
+            let items = Array(realmItems)
+            completion(success: items, fail: nil)
+        } else {
+            completion(success: nil, fail: APIError.NotFoundData())
         }
         
     }
     
-    
-/*        Alamofire.request(.GET, APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), encoding: .JSON).validate().responseJSON { (response: Response<AnyObject, NSError>) -> Void in
- 
- switch response.result {
- 
- case let .Success(valueJSON):
- let items = Mapper<AppItem>().mapArray(valueJSON["feed"]!?["entry"])
- 
- if category != nil {
- let filteredItems = items!.filter() { $0.category == category}
- completion(success: filteredItems, fail: nil)
- } else {
- completion(success: items, fail: nil)
- }
- 
- case .Failure(let alamoFireError):
- let error = Error.ErrorFromAlamofire(alamoFireError)
- completion(success: nil, fail: error)
- }
- }*/
+    func syncItems(completion: (success: [AppItem]!, fail: APIError!) -> Void) {
+        SyncManager.sharedInstance.downloadData { (success, fail) in
+            completion(success: success, fail: fail)
+        }
+    }
  
     func findCategories(completion: (success: [String]!, fail: NSError!) -> Void) {
         let categories = ["All Categories", "Games", "Photo & Video", "Social Networking", "Education", "Music", "Navigation", "Travel"]

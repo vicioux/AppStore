@@ -32,6 +32,7 @@
 		555854F31CBAB0D7009B54DB /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F21CBAB0D7009B54DB /* AppRepository.swift */; };
 		555854F51CBAB1FB009B54DB /* TestAppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F41CBAB1FB009B54DB /* TestAppRepository.swift */; };
 		555854F71CBAB2E7009B54DB /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555854F61CBAB2E7009B54DB /* RepositoryLocator.swift */; };
+		55CD1EBB1CBFEE0300922161 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CD1EBA1CBFEE0300922161 /* SyncManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		555854F21CBAB0D7009B54DB /* AppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRepository.swift; path = Repositories/Production/AppRepository.swift; sourceTree = "<group>"; };
 		555854F41CBAB1FB009B54DB /* TestAppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAppRepository.swift; path = Repositories/Test/TestAppRepository.swift; sourceTree = "<group>"; };
 		555854F61CBAB2E7009B54DB /* RepositoryLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryLocator.swift; path = Repositories/RepositoryLocator.swift; sourceTree = "<group>"; };
+		55CD1EBA1CBFEE0300922161 /* SyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncManager.swift; path = Repositories/Production/SyncManager.swift; sourceTree = "<group>"; };
 		D873FB3A473393947D41D62F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,7 @@
 			children = (
 				555854F21CBAB0D7009B54DB /* AppRepository.swift */,
 				553D83B91CBD2F5B00450CD8 /* APIClient.swift */,
+				55CD1EBA1CBFEE0300922161 /* SyncManager.swift */,
 			);
 			name = Production;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				553D83B31CBCAEDE00450CD8 /* Error.swift in Sources */,
 				552B26791CBEE4E1004F3749 /* CategoryViewController.swift in Sources */,
 				5527001F1CBE09DD006CC45C /* ItemsCollectionViewCell.swift in Sources */,
+				55CD1EBB1CBFEE0300922161 /* SyncManager.swift in Sources */,
 				555854EF1CBAA047009B54DB /* AppItem.swift in Sources */,
 				552B26701CBEDE79004F3749 /* CategoryTableViewCell.swift in Sources */,
 				555854EC1CBA9DEB009B54DB /* IAppRepository.swift in Sources */,

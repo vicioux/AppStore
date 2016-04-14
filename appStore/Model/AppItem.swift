@@ -8,20 +8,25 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class AppItem : Mappable {
+class AppItem : Object,Mappable {
     
-    var name : String?
-    var category : String?
-    var summary : String?
-    var price : String?
-    var image : String?
-    var releaseDate : String?
-    var link : String?
+    dynamic var name : String?
+    dynamic var category : String?
+    dynamic var summary : String?
+    dynamic var price : String?
+    dynamic var image : String?
+    dynamic var releaseDate : String?
+    dynamic var link : String?
     
-    init(){}
+    override static func primaryKey() -> String? {
+        return "name"
+    }
     
-    required init?(_ map: Map) {
+    //Impl. of Mappable protocol
+    required convenience init?(_ map: Map) {
+        self.init()
         mapping(map)
     }
     

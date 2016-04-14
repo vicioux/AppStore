@@ -13,5 +13,7 @@ protocol IAppRepository {
     
     func findApps(category: String!,completion:(success: [AppItem]!, fail: APIError!)-> Void)-> Void
     
+    func syncItems(completion: (success: [AppItem]!, fail: APIError!) -> Void) -> Void
+    
     func findCategories(completion:(success: [String]!, fail: NSError!)-> Void)-> Void
 }

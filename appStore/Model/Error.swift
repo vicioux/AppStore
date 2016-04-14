@@ -17,6 +17,7 @@ enum APIError: ErrorType, CustomStringConvertible {
     case NoResponse()
     case UnknownError(statusCode: Int)
     case URLErrorDomain()
+    case NotFoundData()
     
     var description: String {
         switch self {
@@ -32,7 +33,10 @@ enum APIError: ErrorType, CustomStringConvertible {
             return "The server responded with an unknown error code \(statusCode)"
         case .URLErrorDomain():
             return "invalid Domain"
+        case .NotFoundData():
+            return "Data not found"
         }
+        
     }
 }
 
