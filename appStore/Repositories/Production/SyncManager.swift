@@ -17,31 +17,46 @@ class SyncManager {
     
     func downloadData(completion: (success: [AppItem]!, fail: APIError!) -> Void) {
         
-        if !APIClient.isConnectedToNetwork() {
+        let realm = try! Realm()
+        let realmItems = realm.objects(AppItem)
+        let firstTimeConnection = realmItems.count < 1 && !APIClient.isConnectedToNetwork()
+        
+        if (firstTimeConnection){
+            
+            completion(success: nil, fail: APIError.NotDataFirsTime)
+            
+        } else if !APIClient.isConnectedToNetwork() {
+            
             completion(success: nil, fail: APIError.NoInternet)
+            
         }
         
-        APIClient.sharedInstance.request(.GET, APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), parameters: nil,
-            encoding: .JSON).responseResultObject {
-                (request, response) -> Void in
-                switch response.result {
-                    
-                case let .Success(valueJSON):
-                    let items = Mapper<AppItem>().mapArray(valueJSON["feed"]!?["entry"])
-                    
-                    let realm = try! Realm()
-                    try! realm.write {
-                        for item in items! {
-                            realm.add(item,update: true)
+        if(!firstTimeConnection && APIClient.isConnectedToNetwork()){
+            
+            APIClient.sharedInstance.request(.GET, APIClient.getUrl("us/rss/topfreeapplications/limit=20/json"), parameters: nil,
+                encoding: .JSON).responseResultObject {
+                    (request, response) -> Void in
+                    switch response.result {
+                        
+                    case let .Success(valueJSON):
+                        let items = Mapper<AppItem>().mapArray(valueJSON["feed"]!?["entry"])
+                        
+                        let realm = try! Realm()
+                        try! realm.write {
+                            for item in items! {
+                                realm.add(item,update: true)
+                            }
                         }
+                        completion(success: items, fail: nil)
+                        
+                    case .Failure(let alamoFireError):
+                        let error = Error.ErrorFromAlamofire(alamoFireError)
+                        completion(success: nil, fail: error)
                     }
-                    completion(success: items, fail: nil)
-                    
-                case .Failure(let alamoFireError):
-                    let error = Error.ErrorFromAlamofire(alamoFireError)
-                    completion(success: nil, fail: error)
-                }
+            }
         }
+
+        
         
     }
 

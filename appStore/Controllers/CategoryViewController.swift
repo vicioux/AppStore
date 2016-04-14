@@ -24,19 +24,20 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.categoryTableView.reloadData()
-        MobileApp.sharedInstance.sycn { (fail) in
-            if fail != nil {
-                AppNotification.show(fail, subtitle: "Oops something went wrong")
-            }
-        }
-        
         let categoryTableNib = UINib(nibName: Identifier.categoryTableCell, bundle: nil)
         self.categoryTableView.registerNib(categoryTableNib, forCellReuseIdentifier: Identifier.categoryTableCell)
         
         let categoryCollectionNib = UINib(nibName: Identifier.categoryCollectionViewCell, bundle: nil)
         self.categoryCollectionView.registerNib(categoryCollectionNib, forCellWithReuseIdentifier: Identifier.categoryCollectionViewCell)
         
+        
+        MobileApp.sharedInstance.sycn { (fail) in
+            if fail != nil {
+                AppNotification.show(fail, subtitle: "Oops something went wrong")
+            }
+        }
+        
+        self.categoryTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -67,7 +68,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
         let categoryName = MobileApp.sharedInstance.categories[indexPath.row]
         MobileApp.sharedInstance.showItems(categoryName) { (fail) in
             if (fail != nil){
-                AppNotification.show(nil, subtitle: "i guess something it´s happening")
+                AppNotification.show(nil, subtitle: "Oops something went wrong", type:NotificationType.Error.color)
             } else {
                self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
             }
@@ -95,7 +96,7 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
         let categoryName = MobileApp.sharedInstance.categories[indexPath.row]
         MobileApp.sharedInstance.showItems(categoryName) { (fail) in
             if (fail != nil){
-                AppNotification.show(nil, subtitle: "i guess something it´s happening")
+                AppNotification.show(nil, subtitle: "Oops something went wrong", type:NotificationType.Error.color)
             } else {
                 self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
             }

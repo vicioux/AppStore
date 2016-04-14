@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MobileApp.sharedInstance.showCategories { (fail) in
             if (fail != nil){
-                AppNotification.show(nil, subtitle: "i guess something it´s happening")
+                AppNotification.show(nil, subtitle: "Oops something went wrong")
             }
         }
         

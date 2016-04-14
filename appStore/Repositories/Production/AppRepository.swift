@@ -26,11 +26,6 @@ class AppRepository : IAppRepository {
             realmItems = realm.objects(AppItem).filter(predicate)
         }
         
-        //we check if we dont have internet and items too
-        if (realmItems.count < 1 && !APIClient.isConnectedToNetwork()){
-            completion(success: nil, fail: APIError.NoInternet)
-        }
-        
         if (realmItems.count > 0) {
             let items = Array(realmItems)
             completion(success: items, fail: nil)
