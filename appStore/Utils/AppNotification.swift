@@ -13,16 +13,14 @@ class AppNotification {
     
     static func show(error:APIError?, title:String = "Oh snap", subtitle: String, type: UIColor = NotificationType.Info.color ) -> Void {
         
+        var banner = Banner(title: title, subtitle: subtitle, image: nil, backgroundColor: type)
+        
         if error != nil {
-            let banner = Banner(title: title, subtitle: error?.description, image: nil, backgroundColor: NotificationType.Error.color)
-            banner.dismissesOnTap = true
-            banner.show(duration: 3.0)
-        } else {
-            let banner = Banner(title: title, subtitle: subtitle, image: nil, backgroundColor: type)
-            banner.dismissesOnTap = true
-            banner.show(duration: 3.0)
+            banner = Banner(title: title, subtitle: error?.description, image: nil, backgroundColor: NotificationType.Error.color)
         }
         
+        banner.dismissesOnTap = true
+        banner.show(duration: 3.0)
     }
 }
 
