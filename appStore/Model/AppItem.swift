@@ -30,7 +30,7 @@ class AppItem : Mappable {
         category <- map["category.attributes.label"]
         summary <- map["summary.label"]
         price <- map["im:price.attributes.amount"]
-        image <- map["im:image.0.label"]
+        image <- map["im:image.2.label"]
         releaseDate <- map["im:releaseDate.label"]
         link <- map["link.attributes.href"]
     }

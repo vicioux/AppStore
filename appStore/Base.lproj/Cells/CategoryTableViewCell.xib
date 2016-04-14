@@ -25,8 +25,20 @@
                     <constraint firstItem="neG-mR-2gJ" firstAttribute="leading" secondItem="5tm-n3-6sO" secondAttribute="leading" id="5r2-C4-zmh"/>
                     <constraint firstAttribute="trailing" secondItem="neG-mR-2gJ" secondAttribute="trailing" id="KcQ-Ly-bB3"/>
                     <constraint firstAttribute="bottom" secondItem="neG-mR-2gJ" secondAttribute="bottom" id="V0y-Jy-QQp"/>
+                    <constraint firstItem="neG-mR-2gJ" firstAttribute="height" secondItem="5tm-n3-6sO" secondAttribute="height" id="akc-YY-Loe"/>
+                    <constraint firstItem="neG-mR-2gJ" firstAttribute="centerX" secondItem="5tm-n3-6sO" secondAttribute="centerX" id="ash-f0-soM"/>
+                    <constraint firstItem="neG-mR-2gJ" firstAttribute="centerY" secondItem="5tm-n3-6sO" secondAttribute="centerY" id="e9g-3t-Iej"/>
+                    <constraint firstItem="neG-mR-2gJ" firstAttribute="width" secondItem="5tm-n3-6sO" secondAttribute="width" id="kDq-6g-ZVG"/>
                     <constraint firstItem="neG-mR-2gJ" firstAttribute="top" secondItem="5tm-n3-6sO" secondAttribute="top" id="xfo-Qx-LPv"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="5r2-C4-zmh"/>
+                        <exclude reference="KcQ-Ly-bB3"/>
+                        <exclude reference="V0y-Jy-QQp"/>
+                        <exclude reference="xfo-Qx-LPv"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="categoryLabel" destination="neG-mR-2gJ" id="nc2-mN-TSq"/>

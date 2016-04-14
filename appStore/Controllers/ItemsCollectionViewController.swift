@@ -53,7 +53,7 @@ class ItemsCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         MobileApp.sharedInstance.selectCurrentItem(indexPath.row)
-        self.performSegueWithIdentifier(Identifier.ShowDetail, sender: nil)
+        self.performSegueWithIdentifier(Identifier.ShowDetail, sender: self)
     }
     
 }
