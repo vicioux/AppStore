@@ -167,6 +167,7 @@
 		555854AE1CBA8AA5009B54DB /* appStore */ = {
 			isa = PBXGroup;
 			children = (
+				55CD1EBC1CC01CE800922161 /* ThirdParty */,
 				555854ED1CBA9F72009B54DB /* Model */,
 				555854DD1CBA9740009B54DB /* Controllers */,
 				555854E71CBA9BFB009B54DB /* Repositories */,
@@ -264,6 +265,13 @@
 				553D83B21CBCAEDE00450CD8 /* Error.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		55CD1EBC1CC01CE800922161 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ThirdParty;
 			sourceTree = "<group>";
 		};
 		BCCD8409A88A265FC60BEF68 /* Frameworks */ = {

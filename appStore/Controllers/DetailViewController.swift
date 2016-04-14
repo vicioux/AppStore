@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 
 class DetailViewController: UIViewController {
@@ -22,12 +23,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let item = MobileApp.sharedInstance.currentItem
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.itemImage.image = item.getItemImage()
-            });
-        }
-
+        itemImage.hnk_setImageFromURL(NSURL(string:(item?.image)!))
         itemName.text = item.name!
         itemCategory.text = item.category!
         itemPrice.text = item.releaseDate!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class ItemsCollectionViewCell: UICollectionViewCell {
     
@@ -24,11 +25,7 @@ class ItemsCollectionViewCell: UICollectionViewCell {
     
     func updateUI(){
         itemLabel.text = item?.name
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.itemImageView.image = self.item?.getItemImage()
-            });
-        }
+        self.itemImageView.hnk_setImageFromURL(NSURL(string:(item?.image)!))
     }
     
 
