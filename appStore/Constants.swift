@@ -8,4 +8,5 @@
 
 struct Constants {
     static let useTestRepo = false;
+    static let allCategories = "All Categories"
 }

@@ -26,13 +26,6 @@ class ItemsCollectionViewController: UICollectionViewController {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSizeMake(width, width + heigthAjustment)
         
-        MobileApp.sharedInstance.showItems(nil) { (fail) in
-            if (fail != nil){
-                AppNotification.show(nil, subtitle: "i guess something it´s happening")
-            } else {
-                self.collectionView?.reloadData()
-            }
-        }
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -58,6 +51,7 @@ class ItemsCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         MobileApp.sharedInstance.selectCurrentItem(indexPath.row)
         self.performSegueWithIdentifier(Identifier.ShowDetail, sender: nil)
     }

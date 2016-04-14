@@ -22,7 +22,14 @@ class MobileApp: NSObject {
     }
     
     func showItems(category:String!, completion:(fail: APIError!) -> Void) {
-        context.appRepository().findApps(category) { [weak self] (success, error) in
+        
+        var categoryName:String? = nil
+        
+        if category != Constants.allCategories {
+            categoryName = category;
+        }
+        
+        context.appRepository().findApps(categoryName) { [weak self] (success, error) in
             
             if (success != nil && success.count > 0) {
                 self!.items = success

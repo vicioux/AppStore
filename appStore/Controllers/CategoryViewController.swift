@@ -58,7 +58,15 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
+        
+        let categoryName = MobileApp.sharedInstance.categories[indexPath.row]
+        MobileApp.sharedInstance.showItems(categoryName) { (fail) in
+            if (fail != nil){
+                AppNotification.show(nil, subtitle: "i guess something it´s happening")
+            } else {
+               self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
+            }
+        }
     }
     
 }
@@ -78,7 +86,15 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(Identifier.categorySegue, sender: indexPath)
+        
+        let categoryName = MobileApp.sharedInstance.categories[indexPath.row]
+        MobileApp.sharedInstance.showItems(categoryName) { (fail) in
+            if (fail != nil){
+                AppNotification.show(nil, subtitle: "i guess something it´s happening")
+            } else {
+                self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
+            }
+        }
     }
 }
 
