@@ -24,14 +24,6 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Category"
-        
-        let categoryTableNib = UINib(nibName: Identifier.categoryTableCell, bundle: nil)
-        self.categoryTableView.registerNib(categoryTableNib, forCellReuseIdentifier: Identifier.categoryTableCell)
-        
-        let categoryCollectionNib = UINib(nibName: Identifier.categoryCollectionViewCell, bundle: nil)
-        self.categoryCollectionView.registerNib(categoryCollectionNib, forCellWithReuseIdentifier: Identifier.categoryCollectionViewCell)
-        
         MobileApp.sharedInstance.showCategories { (fail) in
             if (fail != nil){
                 AppNotification.show(nil, subtitle: "i guess something it´s happening")
@@ -40,6 +32,20 @@ class CategoryViewController: UIViewController {
             }
         }
         
+        let categoryTableNib = UINib(nibName: Identifier.categoryTableCell, bundle: nil)
+        self.categoryTableView.registerNib(categoryTableNib, forCellReuseIdentifier: Identifier.categoryTableCell)
+        
+        let categoryCollectionNib = UINib(nibName: Identifier.categoryCollectionViewCell, bundle: nil)
+        self.categoryCollectionView.registerNib(categoryCollectionNib, forCellWithReuseIdentifier: Identifier.categoryCollectionViewCell)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let nav = self.navigationController?.navigationBar
+        let titleColor = UIColor(red: 245.0 / 255.0, green: 0 / 255.0, blue: 145.0 / 255.0, alpha: 1.0)
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: titleColor]
+        nav?.tintColor = titleColor
+        nav?.translucent = false
     }
 
 }

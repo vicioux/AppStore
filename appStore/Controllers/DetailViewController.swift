@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
 
         itemName.text = item.name!
         itemCategory.text = item.category!
-        itemPrice.text = item.price!
+        itemPrice.text = item.releaseDate!
         itemDescription.text = item.summary!
         
         

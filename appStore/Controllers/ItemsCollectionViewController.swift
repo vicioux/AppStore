@@ -28,6 +28,13 @@ class ItemsCollectionViewController: UICollectionViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        let nav = self.navigationController?.navigationBar
+        let titleColor = UIColor(red: 245.0 / 255.0, green: 0 / 255.0, blue: 145.0 / 255.0, alpha: 1.0)
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: titleColor]
+        nav?.translucent = false
+    }
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }

@@ -15,19 +15,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XPv-2z-DeH">
-                        <rect key="frame" x="0.0" y="145" width="166" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="0.66484488355511373" green="1" blue="0.92379927219882041" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.0" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="XPv-2z-DeH" secondAttribute="bottom" id="2aZ-fa-38d"/>
-                <constraint firstItem="XPv-2z-DeH" firstAttribute="leading" secondItem="Ebg-lu-MI0" secondAttribute="leading" id="WjO-CA-ke1"/>
-                <constraint firstAttribute="trailing" secondItem="XPv-2z-DeH" secondAttribute="trailing" id="nwe-J2-moO"/>
+                <constraint firstItem="XPv-2z-DeH" firstAttribute="width" secondItem="Ebg-lu-MI0" secondAttribute="width" id="PwN-gw-q2T"/>
+                <constraint firstItem="XPv-2z-DeH" firstAttribute="leading" secondItem="Ebg-lu-MI0" secondAttribute="leading" id="Zps-qt-xEL"/>
+                <constraint firstItem="XPv-2z-DeH" firstAttribute="centerY" secondItem="Ebg-lu-MI0" secondAttribute="centerY" id="hqZ-iM-oeS"/>
+                <constraint firstItem="XPv-2z-DeH" firstAttribute="height" secondItem="Ebg-lu-MI0" secondAttribute="height" id="xNG-kF-1xe"/>
             </constraints>
             <size key="customSize" width="166" height="166"/>
             <connections>
