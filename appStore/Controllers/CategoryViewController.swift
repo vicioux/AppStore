@@ -68,7 +68,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
         let categoryName = MobileApp.sharedInstance.categories[indexPath.row]
         MobileApp.sharedInstance.showItems(categoryName) { (fail) in
             if (fail != nil){
-                AppNotification.show(nil, subtitle: "Oops something went wrong", type:NotificationType.Error.color)
+                AppNotification.show(nil, subtitle: "Nothing to see yet!", type:NotificationType.Info.color)
             } else {
                self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
             }
@@ -96,7 +96,7 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
         let categoryName = MobileApp.sharedInstance.categories[indexPath.row]
         MobileApp.sharedInstance.showItems(categoryName) { (fail) in
             if (fail != nil){
-                AppNotification.show(nil, subtitle: "Oops something went wrong", type:NotificationType.Error.color)
+                AppNotification.show(nil, subtitle: "Nothing to see yet!", type:NotificationType.Info.color)
             } else {
                 self.performSegueWithIdentifier(Identifier.categorySegue, sender: nil)
             }
