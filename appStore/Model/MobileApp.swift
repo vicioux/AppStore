@@ -12,6 +12,29 @@ import Foundation
 class MobileApp: NSObject {
     
     static let sharedInstance = MobileApp()
+    
+    class var sharedDispatchInstance: MobileApp {
+        
+        struct Stactic {
+            
+            static var onceToken:dispatch_once_t = 0
+            
+            static var instance: MobileApp? = nil
+            
+        }
+        
+        dispatch_once(&Stactic.onceToken) {
+            
+            Stactic.instance = MobileApp()
+            
+        }
+        
+        return Stactic.instance!
+        
+    }
+    
+    
+    
     var context: RepositoryLocator;
     var items: [AppItem]!
     var currentItem: AppItem!

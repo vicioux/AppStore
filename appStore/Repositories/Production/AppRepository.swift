@@ -15,6 +15,27 @@ class AppRepository : IAppRepository {
     
     static let sharedInstance = AppRepository()
     
+    class var sharedDispatchInstance: AppRepository {
+        
+        struct Stactic {
+            
+            static var onceToken:dispatch_once_t = 0
+            
+            static var instance: AppRepository? = nil
+            
+        }
+        
+        dispatch_once(&Stactic.onceToken) {
+            
+            Stactic.instance = AppRepository()
+            
+        }
+        
+        return Stactic.instance!
+        
+    }
+    
+    
     func findApps(category: String!, completion: (success: [AppItem]!, fail: APIError!) -> Void) {
     
         let realm = try! Realm()
